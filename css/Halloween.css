@@ -4,19 +4,14 @@ body, html {
     font-family: 'Arial', sans-serif;
     height: 100%;
     overflow: hidden;
-    background-color: #2D0157;
-    color: #F8F8FF;
-    background-image: 
-        radial-gradient(circle at 90% 10%, #FF6B1A22 0%, transparent 20%),
-        radial-gradient(circle at 10% 90%, #FF6B1A22 0%, transparent 20%);
+    background-color: #1a0d0d;
+    color: #fff;
 }
-
 .container {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
-
 .desktop {
     display: flex;
     flex-wrap: wrap;
@@ -25,246 +20,185 @@ body, html {
     height: calc(100% - 40px);
     padding: 10px;
     overflow-y: auto;
-    background-image: 
-        radial-gradient(circle at 20% 20%, #FF6B1A11 0%, transparent 10%),
-        radial-gradient(circle at 80% 80%, #FF6B1A11 0%, transparent 10%);
 }
-
 .icon {
     width: 60px;
     height: 60px;
     margin: 5px;
-    background-color: rgba(255, 107, 26, 0.2);
-    border: 1px solid #FF6B1A;
+    background-color: rgba(224, 118, 21, 0.8);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
+    transition: background-color 0.3s, transform 0.2s;
 }
-
 .icon:hover {
-    background-color: rgba(255, 107, 26, 0.4);
+    background-color: rgba(245, 156, 66, 0.8);
     transform: scale(1.05);
-    box-shadow: 0 0 15px #FF6B1A55;
 }
-
-.icon::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, #FF6B1A22, transparent 70%);
-    animation: rotate 10s linear infinite;
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
 .icon img {
     width: 30px;
     height: 30px;
     margin-bottom: 3px;
-    filter: drop-shadow(0 0 2px #FF6B1A);
 }
-
 .icon span {
     font-size: 10px;
     text-align: center;
     word-wrap: break-word;
     max-width: 100%;
-    color: #F8F8FF;
-    text-shadow: 0 0 5px #FF6B1A;
 }
-
 .taskbar {
     display: flex;
-    background-color: #1A0034;
+    background-color: #3e1707;
     padding: 5px;
-    border-top: 2px solid #FF6B1A;
+    border-top: 2px solid #e47521;
     height: 40px;
-    position: relative;
-    box-shadow: 0 -5px 15px #FF6B1A33;
 }
-
 .start-menu {
-    background-color: #2D0157;
+    background-color: #a63e10;
     padding: 5px 10px;
     margin-right: 10px;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    border: 1px solid #FF6B1A55;
 }
-
 .start-menu:hover {
-    background-color: #FF6B1A;
-    box-shadow: 0 0 10px #FF6B1A77;
+    background-color: #f79f6e;
 }
-
 .taskbar-apps {
     display: flex;
     flex-grow: 1;
     overflow-x: auto;
     white-space: nowrap;
 }
-
 .taskbar-app {
     padding: 5px 10px;
     margin-right: 5px;
-    background-color: #2D0157;
-    border: 1px solid #FF6B1A55;
-    color: #F8F8FF;
+    background-color: #a63e10;
+    border: none;
+    color: #fff;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background-color 0.3s;
     display: flex;
     align-items: center;
     border-radius: 5px;
 }
-
 .taskbar-app:hover, .taskbar-app.active {
-    background-color: #FF6B1A;
-    box-shadow: 0 0 10px #FF6B1A77;
+    background-color: #f79f6e;
 }
-
+.taskbar-app .close {
+    margin-left: 5px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+.taskbar-app .close:hover {
+    opacity: 1;
+}
 .window {
     position: absolute;
-    background-color: #2D0157;
-    border: 2px solid #FF6B1A;
+    background-color: #3e1707;
+    border: 2px solid #e47521;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 20px #FF6B1A55;
+    box-shadow: 0 0 20px rgba(224, 118, 21, 0.5);
     display: flex;
     flex-direction: column;
     resize: both;
     min-width: 200px;
     min-height: 150px;
 }
-
 .window-header {
-    background-color: #1A0034;
+    background-color: #a63e10;
     padding: 5px 10px;
     cursor: move;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #FF6B1A55;
 }
-
 .window-title {
     font-weight: bold;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #F8F8FF;
-    text-shadow: 0 0 5px #FF6B1A;
 }
-
 .window-controls {
     display: flex;
 }
-
 .window-control {
     width: 15px;
     height: 15px;
     border-radius: 50%;
     margin-left: 5px;
     cursor: pointer;
-    border: 1px solid #FF6B1A33;
-    transition: all 0.3s;
 }
-
 .window-minimize {
-    background-color: #FF6B1A;
+    background-color: #f39c12;
 }
-
 .window-maximize {
-    background-color: #4CAF50;
+    background-color: #27ae60;
 }
-
 .window-close {
-    background-color: #FF3D00;
+    background-color: #e74c3c;
 }
-
-.window-control:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 5px currentColor;
+.window-content {
+    flex-grow: 1;
+    overflow: hidden;
 }
-
+.window-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 .loading {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(45, 1, 87, 0.8);
+    background-color: rgba(26, 13, 13, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
 }
-
 .loading-text {
     font-size: 24px;
-    color: #FF6B1A;
-    text-shadow: 0 0 10px #FF6B1A;
-    animation: pulse 2s infinite;
+    color: #f79f6e;
+    text-shadow: 0 0 10px #f79f6e;
 }
-
-@keyframes pulse {
-    0% { text-shadow: 0 0 10px #FF6B1A; }
-    50% { text-shadow: 0 0 20px #FF6B1A; }
-    100% { text-shadow: 0 0 10px #FF6B1A; }
-}
-
 .sidebar {
     position: fixed;
     left: -250px;
     top: 0;
     width: 250px;
     height: 100%;
-    background-color: #2D0157;
+    background-color: #3e1707;
     transition: left 0.3s ease;
     z-index: 1000;
     overflow-y: auto;
-    border-right: 2px solid #FF6B1A;
-    box-shadow: 5px 0 15px #FF6B1A33;
 }
-
 .sidebar.active {
     left: 0;
 }
-
 .sidebar-app {
     display: flex;
     align-items: center;
     padding: 10px;
-    color: #F8F8FF;
+    color: #fff;
     text-decoration: none;
     transition: background-color 0.2s;
-    border-bottom: 1px solid #FF6B1A33;
 }
-
 .sidebar-app:hover {
-    background-color: #FF6B1A33;
+    background-color: #5e2c15;
 }
-
 .sidebar-app img {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    filter: drop-shadow(0 0 2px #FF6B1A);
 }
-
 @media (max-width: 768px) {
     .icon {
         width: 50px;
