@@ -22,4 +22,10 @@ const apps = [
         path: 'src/apps/encryption/index.html',
         icon: 'src/image/icon4.png' 
     },
+
+        { 
+        name: 'PrivacyOS YouTubeプレイリスト', 
+        path: 'src/apps/playlist/index.html',
+        icon: 'src/image/icon5.png' 
+    },
 ];
